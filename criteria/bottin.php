@@ -54,3 +54,10 @@ $query = array(
                     ),
                 )),
 );
+
+/**
+ * RECHERCHER SUR UN SECTEUR
+ *
+ * UN CHAMP A ETE AJOUT A L'INDEX :
+ *
+ */

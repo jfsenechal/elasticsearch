@@ -42,6 +42,7 @@ curl_setopt($elastic, CURLOPT_HTTPHEADER, array(
 ));
 curl_setopt($elastic, CURLOPT_POSTFIELDS, $querySring);
 $response = curl_exec($elastic);
+curl_close($elastic);
 $data = json_decode($response);
 /**
  * GESTION DES ERREURS
@@ -57,10 +58,9 @@ if (isset($data->error)) {
     echo "\n \n";
     return;
 }
-curl_close($elastic);
 
 /**
- * Dans result on sotck les rows retournés
+ * Dans result on stock les rows retournés
  */
 $result = $data->hits;
 $total = $result->total;
